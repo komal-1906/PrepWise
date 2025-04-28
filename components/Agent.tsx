@@ -36,13 +36,11 @@ const Agent = ({
   const [lastMessage, setLastMessage] = useState<string>("");
 
   useEffect(() => {
-    const onCallStart = () => {
+    const onCallStart = () => 
       setCallStatus(CallStatus.ACTIVE);
-    };
 
-    const onCallEnd = () => {
+    const onCallEnd = () =>
       setCallStatus(CallStatus.FINISHED);
-    };
 
     const onMessage = (message: Message) => {
       if (message.type === "transcript" && message.transcriptType === "final") {
@@ -153,7 +151,7 @@ const Agent = ({
           <div className="avatar">
             <Image
               src="/ai-avatar.png"
-              alt="profile-image"
+              alt="vapi"
               width={65}
               height={54}
               className="object-cover"
@@ -168,9 +166,9 @@ const Agent = ({
           <div className="card-content">
             <Image
               src="/user-avatar.jpg"
-              alt="profile-image"
-              width={539}
-              height={539}
+              alt="user-avatar"
+              width={540}
+              height={540}
               className="rounded-full object-cover size-[120px]"
             />
             <h3>{userName}</h3>
@@ -221,3 +219,4 @@ const Agent = ({
 };
 
 export default Agent;
+
