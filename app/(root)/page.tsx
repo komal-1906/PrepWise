@@ -7,13 +7,13 @@ import Link from "next/link";
 
 async function Home() {
   const user = await getCurrentUser();
-  const [userInterviews, allInterviews] = await Promise.all([
+  const [userInterviews, allInterview] = await Promise.all([
     getInterviewsByUserId(user?.id!),
     getLatestInterviews({userId: user?.id! }),
   ]); 
 
   const hasPastInterviews = userInterviews?.length! > 0;
-  const hasUpcomingInterviews = allInterviews?.length! > 0;
+  const hasUpcomingInterviews = allInterview?.length! > 0;
 
   return (
     <>
@@ -60,7 +60,7 @@ async function Home() {
 
         <div className="interviews-section">
         {hasUpcomingInterviews ? (
-              allInterviews?.map((interview) => (
+              allInterview?.map((interview) => (
                 <InterviewCard 
                 key={interview.id}
                 userId={user?.id}

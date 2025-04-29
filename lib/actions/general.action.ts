@@ -13,8 +13,8 @@ export async function createFeedback(params: CreateFeedbackParams) {
     const formattedTranscript = transcript
       .map(
         (sentence: { role: string; content: string }) =>
-          (`- ${sentence.role}: ${sentence.content}\n`
-      ))
+          `- ${sentence.role}: ${sentence.content}\n`
+      )
       .join("");
 
     const { object: {totalScore, categoryScores, strengths, areasForImprovement, finalAssessment} } = await generateObject({
@@ -49,15 +49,15 @@ export async function createFeedback(params: CreateFeedbackParams) {
       createdAt: new Date().toISOString(),
     });
 
-    // let feedbackRef;
+    let feedbackRef;
 
-    // if (feedbackId) {
-    //   feedbackRef = db.collection("feedback").doc(feedbackId);
-    // } else {
-    //   feedbackRef = db.collection("feedback").doc();
-    // }
+    if (feedbackId) {
+      feedbackRef = db.collection("feedback").doc(feedbackId);
+    } else {
+      feedbackRef = db.collection("feedback").doc();
+    }
 
-    // await feedbackRef.set(feedback);
+    await feedbackRef.set(feedback);
 
     return { 
         success: true, 

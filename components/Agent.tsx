@@ -37,7 +37,8 @@ const Agent = ({
 
   useEffect(() => {
     const onCallStart = () => 
-      setCallStatus(CallStatus.ACTIVE);
+      setCallStatus(CallStatus.ACTIVE)
+    ;
 
     const onCallEnd = () =>
       setCallStatus(CallStatus.FINISHED);
