@@ -1,6 +1,19 @@
 import { CreateAssistantDTO } from "@vapi-ai/web/dist/api";
 import { z } from "zod";
 
+interface Interview {
+  id: string;
+  userId: string;
+  role: string;
+  type: string;
+  techstack: string[];
+  level: string;
+  questions: string[];
+  finalized: boolean;
+  createdAt: string;
+}
+
+
 export const mappings = {
   "react.js": "react",
   reactjs: "react",
