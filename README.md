@@ -1,3 +1,7 @@
+PrepWise is an AI-based mock interview platform developed as a semester project.
+It helps users practice interview questions and simulate interview scenarios to improve their preparation.
+This project was built in short time duration and it is for learning and experimentation with modern web technologies and AI tools.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
